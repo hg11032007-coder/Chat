@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b1c">
+  <title>Sandeep Chat — Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="adminBody">
+  <section id="adminLoginPage" class="adminAuth">
+    <div class="adminLoginCard">
+      <a class="brand" href="/"><span class="logoMark"><span>♛</span></span><span>Sandeep Chat</span></a>
+      <span class="authKicker">SECURE CONSOLE</span>
+      <h2>Admin login</h2>
+      <p>Sign in with the configured administrator account.</p>
+      <label class="inputShell"><span>@</span><input id="aUsername" placeholder="Admin username" autocomplete="username"></label>
+      <label class="inputShell"><span>⌘</span><input id="aPassword" type="password" placeholder="Password" autocomplete="current-password"></label>
+      <button id="aLoginBtn" class="primaryBtn" type="button">Open dashboard →</button>
+      <small id="aAuthMsg"></small>
+      <a class="backHome" href="/">← Back to Sandeep Chat</a>
+    </div>
+  </section>
+
+  <div id="adminDash" class="hidden adminWrap">
+    <header class="adminHeader">
+      <div><span class="sectionKicker">CONTROL CENTER</span><h1>Sandeep Chat Admin</h1></div>
+      <div class="headerBtns"><a href="/" class="backLink">◌ Back to Chat</a><button id="aLogout">Log out</button></div>
+    </header>
+
+    <section class="adminStats" id="adminStats"></section>
+
+    <section class="adminSection">
+      <div class="adminSectionHead"><div><span class="sectionKicker">COMMUNITY</span><h3>Users</h3></div></div>
+      <div class="tableScroll"><table class="adminTable">
+        <thead><tr><th>ID</th><th>Username</th><th>Joined</th><th>Status</th><th>Last online</th><th>Actions</th></tr></thead>
+        <tbody id="usersBody"></tbody>
+      </table></div>
+    </section>
+
+    <section class="adminSection">
+      <div class="adminSectionHead liveSectionHead"><div><span class="sectionKicker">LIVE DELIVERY STATUS</span><h3>Message activity</h3></div><small>Updates automatically every 5 seconds</small></div>
+      <div class="tableScroll"><table class="adminTable messageActivityTable">
+        <thead><tr><th>From</th><th>To</th><th>Message</th><th>Sent at</th><th>Status</th><th>Seen at</th></tr></thead>
+        <tbody id="messagesBody"></tbody>
+      </table></div>
+    </section>
+
+    <section class="adminSection">
+      <div class="adminSectionHead"><div><span class="sectionKicker">MODERATION</span><h3>Deleted messages</h3></div></div>
+      <div class="tableScroll"><table class="adminTable">
+        <thead><tr><th>From</th><th>To</th><th>Content</th><th>Deleted at</th><th>Actions</th></tr></thead>
+        <tbody id="deletedBody"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="admin.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3771fa16b7790f3',t:'MTc4ODc5ODg5NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
