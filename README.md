@@ -1,8 +1,8 @@
-\# Sandeep Chat — Social chat + Stories + Nova AI
+\# FunChat — Social chat + Stories + Nova AI
 
 
 
-A modern, responsive private chat application with a dark neon interface inspired by the provided reference. The product name remains \*\*Sandeep Chat\*\*.
+A modern, responsive private chat application with a dark neon interface inspired by the provided reference. The product name remains \*\*FunChat\*\*.
 
 
 
