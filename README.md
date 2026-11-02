@@ -124,11 +124,11 @@ PORT=3000
 
 JWT\_SECRET=replace-with-a-long-random-secret
 
-ADMIN\_USERNAME=sandeep
+ADMIN\_USERNAME=
 
 OPENAI\_API\_KEY=
 
-OPENAI\_MODEL=openrouter/free
+OPENAI\_MODEL=
 
 ```
 
