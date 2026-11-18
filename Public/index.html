@@ -3,84 +3,222 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#070b1c">
+  <meta name="theme-color" content="#16181a">
   <title>Funchat</title>
-  <link rel="stylesheet" href="style.css?v=1.3.4">
+  <link rel="stylesheet" href="style.css?v=2.0.0">
 </head>
 <body>
   <div id="toastHost" class="toastHost" aria-live="polite"></div>
 
   <!-- Login and registration -->
   <section id="authPage" class="authPage">
-    <div class="authGlow glowOne"></div><div class="authGlow glowTwo"></div>
+    <div class="authGlow glowOne"></div>
+    <div class="authGlow glowTwo"></div>
+
     <div class="authHero">
-      <div class="brand brandLarge"><span class="logoMark"><span>♛</span></span><span>Funchat</span></div>
+      <div class="brand brandLarge">
+        <span class="logoMark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.918 2 11.75c0 2.146.887 4.112 2.36 5.635-.153 1.24-.635 2.41-1.268 3.24a.5.5 0 0 0 .514.79c2.012-.39 3.748-1.078 4.803-1.622A11.3 11.3 0 0 0 12 20.5c5.523 0 10-3.918 10-8.75S17.523 3 12 3Zm-4 9.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm4 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm4 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>
+        </span>
+        <span>Funchat</span>
+      </div>
       <p class="tagline">Chat <i>•</i> Share <i>•</i> Connect <i>•</i> AI</p>
       <div class="heroCopy">
-        <span class="eyebrow">YOUR WORLD, ALL IN ONE APP</span>
+        <span class="eyebrow">CLEAN DARK MESSENGER</span>
         <h1>More than just chatting.</h1>
-        <p>Private conversations, disappearing stories, social posts and your personal AI assistant—together in one beautiful place.</p>
+        <p>Private conversations, disappearing stories, social posts and your personal AI assistant—together in one sleek, distraction-free workspace.</p>
       </div>
       <div class="featurePills">
-        <span>⚡ Real-time chat</span><span>◉ 24h stories</span><span>✦ Nova AI</span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+          Real-time chat
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          24h stories
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/></svg>
+          Nova AI
+        </span>
       </div>
-      <div class="waveArt"><i></i><i></i><i></i></div>
+
+      <!-- Subtle messenger preview strip -->
+      <div class="authPreviewCard" aria-hidden="true">
+        <div class="authPreviewDot online"></div>
+        <div class="authPreviewBody">
+          <b>Messages <em>(22)</em></b>
+          <small>Instant sync, pinned chats, voice notes & reactions</small>
+        </div>
+        <span class="authPreviewPill">Live</span>
+      </div>
     </div>
 
     <div class="authCard">
-      <div class="mobileBrand brand"><span class="logoMark"><span>♛</span></span><span>Funchat</span></div>
+      <div class="mobileBrand brand">
+        <span class="logoMark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.918 2 11.75c0 2.146.887 4.112 2.36 5.635-.153 1.24-.635 2.41-1.268 3.24a.5.5 0 0 0 .514.79c2.012-.39 3.748-1.078 4.803-1.622A11.3 11.3 0 0 0 12 20.5c5.523 0 10-3.918 10-8.75S17.523 3 12 3Zm-4 9.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm4 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm4 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>
+        </span>
+        <span>Funchat</span>
+      </div>
+
       <div id="authLoginPanel">
         <span class="authKicker">WELCOME BACK</span>
         <h2>Sign in to continue</h2>
         <p>Your friends and conversations are waiting.</p>
-        <label class="inputShell"><span>@</span><input id="authUsername" autocomplete="username" placeholder="Username"></label>
-        <label class="inputShell"><span>⌘</span><input id="authPassword" type="password" autocomplete="current-password" placeholder="Password"><button class="peekBtn" id="peekPassword" type="button" aria-label="Show password">◉</button></label>
+        <label class="inputShell">
+          <span class="inputIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+          </span>
+          <input id="authUsername" autocomplete="username" placeholder="Username">
+        </label>
+        <label class="inputShell">
+          <span class="inputIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <input id="authPassword" type="password" autocomplete="current-password" placeholder="Password">
+          <button class="peekBtn" id="peekPassword" type="button" aria-label="Show password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </label>
         <button id="loginBtn" class="primaryBtn" type="button">Log in <span>→</span></button>
         <button id="showRegisterBtn" class="outlineBtn" type="button">Create new account</button>
       </div>
+
       <div id="authRegisterPanel" class="hidden">
         <button id="backToLoginBtn" class="textBack" type="button">← Back to login</button>
         <span class="authKicker">JOIN FUNCHAT</span>
         <h2>Create your account</h2>
         <p>Choose a unique username and a secure password.</p>
-        <label class="inputShell"><span>@</span><input id="registerUsername" autocomplete="username" maxlength="24" placeholder="Username"></label>
-        <label class="inputShell"><span>⌘</span><input id="registerPassword" type="password" autocomplete="new-password" placeholder="Password (6+ characters)"></label>
-        <label class="inputShell"><span>✓</span><input id="registerConfirm" type="password" autocomplete="new-password" placeholder="Confirm password"></label>
+        <label class="inputShell">
+          <span class="inputIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+          </span>
+          <input id="registerUsername" autocomplete="username" maxlength="24" placeholder="Username">
+        </label>
+        <label class="inputShell">
+          <span class="inputIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <input id="registerPassword" type="password" autocomplete="new-password" placeholder="Password (6+ characters)">
+        </label>
+        <label class="inputShell">
+          <span class="inputIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <input id="registerConfirm" type="password" autocomplete="new-password" placeholder="Confirm password">
+        </label>
         <button id="registerBtn" class="primaryBtn" type="button">Create account <span>→</span></button>
       </div>
+
       <div id="authMessage" class="authMessage"></div>
       <p class="terms">By continuing, you agree to use Funchat responsibly.</p>
     </div>
   </section>
 
   <!-- Main application -->
-  <div id="appShell" class="appShell hidden">
-    <aside class="sideRail">
-      <a class="brand sideBrand" href="#home" data-view-link="home"><span class="logoMark"><span>♛</span></span><span>Funchat</span></a>
+  <div id="appShell" class="appShell hidden" data-active-view="home">
+    <!-- Slim Left Icon Rail (Dribbble Messenger Style) -->
+    <aside class="sideRail" aria-label="Primary sidebar">
+      <button id="sideProfile" class="railAvatarBtn" data-view="profile" title="My profile" type="button">
+        <span id="sideAvatar"></span>
+        <span class="srOnly"><b id="sideName">Profile</b><small id="sideUsername">@username</small></span>
+      </button>
+
       <nav class="mainNav" aria-label="Main navigation">
-        <button class="navBtn active" data-view="home"><span class="navIcon">⌂</span><span>Home</span></button>
-        <button class="navBtn" data-view="stories"><span class="navIcon">◉</span><span>Stories</span></button>
-        <button class="navBtn" data-view="chats"><span class="navIcon">◌</span><span>Chats</span><b id="chatNavBadge" class="navBadge hidden">0</b></button>
-        <button class="navBtn" data-view="requests"><span class="navIcon">♧</span><span>Requests</span><b id="requestNavBadge" class="navBadge pink hidden">0</b></button>
-        <button class="navBtn" data-view="ai"><span class="navIcon botMini">✦</span><span>Nova AI</span></button>
+        <button class="navBtn active" data-view="home" title="Home feed" aria-label="Home feed" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.8"/></svg>
+          </span>
+          <span class="navLabel">Home</span>
+        </button>
+
+        <button class="navBtn navChatBtn" data-view="chats" title="Messages" aria-label="Messages" type="button">
+          <span class="navIcon">
+            <svg class="iconOutline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+            <svg class="iconFilled" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.806 2 11.5c0 2.084.883 3.993 2.348 5.474-.15 1.206-.63 2.343-1.26 3.15a.5.5 0 0 0 .512.788c1.995-.38 3.718-1.05 4.768-1.58A11.45 11.45 0 0 0 12 20c5.523 0 10-3.806 10-8.5S17.523 3 12 3Zm-4 9.75a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg>
+          </span>
+          <span class="navLabel">Messages</span>
+          <b id="chatNavBadge" class="navBadge hidden">0</b>
+        </button>
+
+        <button id="railCallsBtn" class="navBtn" title="Calls" aria-label="Calls" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          </span>
+          <span class="navLabel">Calls</span>
+        </button>
+
+        <button class="navBtn" data-view="requests" title="Friends & requests" aria-label="Friends and requests" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <span class="navLabel">Friends</span>
+          <b id="requestNavBadge" class="navBadge pink hidden">0</b>
+        </button>
+
+        <button id="railNotifBtn" class="navBtn" title="Notifications" aria-label="Notifications" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </span>
+          <span class="navLabel">Alerts</span>
+          <b id="railAlertBadge" class="navBadge pink hidden">0</b>
+        </button>
+
+        <button class="navBtn" data-view="stories" title="Stories (24h)" aria-label="Stories" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><polygon points="10 8.5 16 12 10 15.5 10 8.5"/></svg>
+          </span>
+          <span class="navLabel">Stories</span>
+        </button>
+
+        <button class="navBtn" data-view="ai" title="Nova AI" aria-label="Nova AI" type="button">
+          <span class="navIcon botMini">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M19 16v4"/><path d="M17 18h4"/></svg>
+          </span>
+          <span class="navLabel">Nova AI</span>
+        </button>
+
+        <button id="railSettingsBtn" class="navBtn" title="Settings" aria-label="Settings" type="button">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+          </span>
+          <span class="navLabel">Settings</span>
+        </button>
+
+        <a id="adminLink" class="navBtn adminLink hidden" href="/admin" title="Admin panel" aria-label="Admin panel">
+          <span class="navIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          </span>
+          <span class="navLabel">Admin</span>
+        </a>
       </nav>
+
       <div class="sideBottom">
-        <a id="adminLink" class="adminLink hidden" href="/admin">🛡 Admin panel</a>
-        <button id="sideProfile" class="sideProfile" data-view="profile">
-          <span id="sideAvatar"></span>
-          <span class="sideProfileText"><b id="sideName">Profile</b><small id="sideUsername">@username</small></span>
-          <span>›</span>
+        <button id="railSunBtn" class="themeRailBtn" title="Light mode" aria-label="Light mode" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button id="railMoonBtn" class="themeRailBtn active" title="Dark mode" aria-label="Dark mode" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
         </button>
       </div>
     </aside>
 
     <main class="mainStage">
       <header class="topBar">
-        <button id="mobileMoreBtn" class="iconBtn mobileOnly" type="button">☰</button>
-        <div><span id="viewEyebrow" class="topEyebrow">FUNCHAT</span><h2 id="viewTitle">Home</h2></div>
+        <button id="mobileMoreBtn" class="iconBtn mobileOnly" aria-label="Open menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="topBarTitle">
+          <span id="viewEyebrow" class="topEyebrow">FUNCHAT</span>
+          <h2 id="viewTitle">Home</h2>
+        </div>
         <div class="topActions">
           <button id="themeQuickBtn" class="iconBtn" title="Change theme" type="button">☾</button>
-          <button id="notificationBtn" class="iconBtn" title="Requests" data-view="requests" type="button">♧<b id="topRequestBadge" class="tinyBadge hidden">0</b></button>
+          <button id="notificationBtn" class="iconBtn" title="Requests" data-view="requests" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <b id="topRequestBadge" class="tinyBadge hidden">0</b>
+          </button>
           <button id="topAvatarBtn" class="avatarButton" data-view="profile" type="button"></button>
         </div>
       </header>
@@ -89,25 +227,44 @@
         <!-- Home feed -->
         <section id="homeView" class="appView active">
           <div class="contentColumn">
-            <div class="sectionHeader compact"><div><span class="sectionKicker">LIVE MOMENTS</span><h3>Stories</h3></div><button class="textBtn" data-view="stories">View all →</button></div>
+            <div class="sectionHeader compact">
+              <div><span class="sectionKicker">LIVE MOMENTS</span><h3>Stories</h3></div>
+              <button class="textBtn" data-view="stories" type="button">View all →</button>
+            </div>
             <div id="homeStories" class="storyRail skeletonRail"></div>
 
             <div class="createPostCard">
               <button class="avatarButton currentAvatar" data-view="profile" type="button"></button>
               <button id="openPostComposer" class="postPrompt" type="button">What's on your mind?</button>
-              <button id="quickPhotoBtn" class="quickMediaBtn" type="button" title="Create photo post">▣</button>
+              <button id="quickPhotoBtn" class="quickMediaBtn" type="button" title="Create photo post">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              </button>
             </div>
 
-            <div class="sectionHeader"><div><span class="sectionKicker">YOUR CIRCLE</span><h3>Latest posts</h3></div><button id="refreshFeedBtn" class="iconBtn small" type="button">↻</button></div>
+            <div class="sectionHeader">
+              <div><span class="sectionKicker">YOUR CIRCLE</span><h3>Latest posts</h3></div>
+              <button id="refreshFeedBtn" class="iconBtn small" title="Refresh feed" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </button>
+            </div>
             <div id="feedList" class="feedList"><div class="loadingCard"></div><div class="loadingCard"></div></div>
           </div>
+
           <aside class="rightColumn">
             <div class="rightCard novaPromo">
-              <span class="novaOrb">✦</span><span class="proPill">AI</span>
-              <h3>Meet Nova</h3><p>Ask questions, improve writing, brainstorm ideas and get instant help.</p>
-              <button data-view="ai" class="primaryBtn smallBtn" type="button">Start chatting →</button>
+              <div class="novaPromoTop">
+                <span class="novaOrb">✦</span>
+                <span class="proPill">AI</span>
+              </div>
+              <h3>Meet Nova</h3>
+              <p>Ask questions, improve writing, brainstorm ideas and get instant help.</p>
+              <button data-view="ai" class="whitePillBtn" type="button">Start chatting →</button>
             </div>
-            <div class="rightCard"><div class="sectionHeader mini"><h3>People to discover</h3></div><div id="homeDiscover"></div><button class="textBtn full" data-view="requests">Find more people</button></div>
+            <div class="rightCard">
+              <div class="sectionHeader mini"><h3>People to discover</h3></div>
+              <div id="homeDiscover"></div>
+              <button class="textBtn full" data-view="requests" type="button">+ Find more people</button>
+            </div>
           </aside>
         </section>
 
@@ -115,7 +272,11 @@
         <section id="storiesView" class="appView">
           <div class="wideColumn">
             <div class="pageHero storyHero">
-              <div><span class="sectionKicker">DISAPPEARS IN 24 HOURS</span><h2>Share your moment</h2><p>Post a photo, a short video, or a thought for your friends.</p></div>
+              <div>
+                <span class="sectionKicker">DISAPPEARS IN 24 HOURS</span>
+                <h2>Share your moment</h2>
+                <p>Post a photo, a short video, or a thought for your friends.</p>
+              </div>
               <button id="openStoryComposer" class="primaryBtn fit" type="button">＋ Create story</button>
             </div>
             <div class="sectionHeader"><div><span class="sectionKicker">NOW PLAYING</span><h3>Recent stories</h3></div></div>
@@ -123,47 +284,200 @@
           </div>
         </section>
 
-        <!-- Chats -->
+        <!-- Chats — 3-Panel Dribbble Messenger Layout -->
         <section id="chatsView" class="appView chatView">
           <div id="chatLayout" class="chatLayout">
+            <!-- Left: Messages Sidebar -->
             <aside class="chatSidebar">
-              <div class="chatSideHead"><div><span class="sectionKicker">MESSAGES</span><h3>Chats</h3></div><button id="newChatBtn" class="iconBtn small" type="button">＋</button></div>
-              <label class="searchBox"><span>⌕</span><input id="chatSearch" placeholder="Search chats..."></label>
+              <div class="chatSideHead">
+                <div class="chatSideTitleRow">
+                  <button id="chatMobileMenuBtn" class="iconBtn ghost mobileOnly" aria-label="Menu" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  </button>
+                  <h3>Messages <span id="chatCountLabel" class="chatCountLabel">(0)</span></h3>
+                </div>
+                <button id="newChatBtn" class="composeChatBtn" title="New conversation" aria-label="New conversation" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></svg>
+                </button>
+              </div>
+
+              <label class="searchBox chatSearchBox">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7.5"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="chatSearch" placeholder="Search">
+              </label>
+
               <div id="chatList" class="chatList"></div>
             </aside>
+
+            <!-- Center: Active Conversation -->
             <section id="conversation" class="conversation">
               <div id="conversationEmpty" class="conversationEmpty">
-                <span class="emptyOrb">◌</span><h3>Your conversations</h3><p>Select a friend to start chatting in real time.</p><button id="emptyFindPeople" class="outlineBtn compactBtn" data-view="requests" type="button">Find people</button>
+                <span class="emptyOrb">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.806 2 11.5c0 2.084.883 3.993 2.348 5.474-.15 1.206-.63 2.343-1.26 3.15a.5.5 0 0 0 .512.788c1.995-.38 3.718-1.05 4.768-1.58A11.45 11.45 0 0 0 12 20c5.523 0 10-3.806 10-8.5S17.523 3 12 3Zm-4 9.75a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg>
+                </span>
+                <h3>Select a conversation</h3>
+                <p>Choose a friend from the left panel to start messaging in real time.</p>
+                <button id="emptyFindPeople" class="whitePillBtn compactPill" data-view="requests" type="button">+ Add friend</button>
               </div>
+
               <div id="conversationActive" class="conversationActive hidden">
                 <header class="conversationHead">
-                  <button id="chatBackBtn" class="chatBackControl" title="Close chat and go back to the chat list" aria-label="Close chat and go back" type="button">‹</button>
-                  <button id="activeChatAvatar" class="plainAvatarBtn" type="button"></button>
-                  <div class="conversationPerson"><b id="activeChatName">Friend</b><small id="activeChatStatus">Offline</small></div>
-                  <div class="conversationActions"><button id="voiceCallBtn" class="iconBtn" title="Voice calls coming soon" type="button">☎</button><button id="chatMenuBtn" class="iconBtn" title="Chat options" type="button">⋮</button></div>
-                  <div id="chatMenu" class="dropdownMenu hidden"><button data-chat-action="profile">View profile</button><button data-chat-action="hide">Hide chat</button><button data-chat-action="remove-friend" class="dangerText">Remove friend</button><button data-chat-action="block" class="dangerText">Block user</button></div>
+                  <button id="chatBackBtn" class="chatBackControl" title="Back to messages" aria-label="Close chat and go back" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                  </button>
+                  <button id="activeChatAvatar" class="plainAvatarBtn" title="Contact details" type="button"></button>
+                  <div id="activeChatPerson" class="conversationPerson" role="button" tabindex="0">
+                    <b id="activeChatName">Friend</b>
+                    <small id="activeChatStatus">Offline</small>
+                  </div>
+                  <div class="conversationActions">
+                    <button id="voiceCallBtn" class="headIconBtn" title="Voice call" aria-label="Voice call" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                    </button>
+                    <button id="videoCallBtn" class="headIconBtn" title="Video call" aria-label="Video call" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2.5"/></svg>
+                    </button>
+                    <button id="chatSearchToggleBtn" class="headIconBtn" title="Search in conversation" aria-label="Search in conversation" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7.5"/><path d="m20 20-3.5-3.5"/></svg>
+                    </button>
+                    <button id="chatMenuBtn" class="headIconBtn" title="More options" aria-label="More options" type="button">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+                    </button>
+                  </div>
+
+                  <div id="chatMenu" class="dropdownMenu hidden">
+                    <button data-chat-action="info" type="button">Details & attachments</button>
+                    <button id="pinChatMenuBtn" data-chat-action="pin" type="button">Pin conversation</button>
+                    <button data-chat-action="profile" type="button">View profile</button>
+                    <button data-chat-action="hide" type="button">Hide chat</button>
+                    <button data-chat-action="remove-friend" class="dangerText" type="button">Remove friend</button>
+                    <button data-chat-action="block" class="dangerText" type="button">Block user</button>
+                  </div>
                 </header>
-                <div id="typingBar" class="typingBar hidden"><span></span><span></span><span></span> typing…</div>
+
+                <!-- Inline Message Search -->
+                <div id="inChatSearchBar" class="inChatSearchBar hidden">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7.5"/><path d="m20 20-3.5-3.5"/></svg>
+                  <input id="inChatSearchInput" placeholder="Search messages in this chat…">
+                  <small id="inChatSearchCount"></small>
+                  <button id="closeInChatSearch" type="button" aria-label="Close search">×</button>
+                </div>
+
+                <!-- Messages Stream -->
                 <div id="messageList" class="messageList"></div>
-                <div id="replyPreview" class="replyPreview hidden"><div><small>Replying to <b id="replyToName"></b></small><span id="replyToText"></span></div><button id="cancelReply" type="button">×</button></div>
+
+                <!-- Bottom Typing Indicator (Dribbble Style) -->
+                <div id="typingBar" class="typingBar hidden">
+                  <span id="typingAvatar" class="typingAvatar"></span>
+                  <span id="typingLabel" class="typingLabel">is typing...</span>
+                </div>
+
+                <!-- Reply Preview -->
+                <div id="replyPreview" class="replyPreview hidden">
+                  <div>
+                    <small>Replying to <b id="replyToName"></b></small>
+                    <span id="replyToText"></span>
+                  </div>
+                  <button id="cancelReply" type="button" aria-label="Cancel reply">×</button>
+                </div>
+
+                <!-- Emoji Popover -->
+                <div id="emojiPicker" class="emojiPicker hidden" role="dialog" aria-label="Emoji picker"></div>
+
+                <!-- Floating Dark Pill Composer -->
                 <form id="messageComposer" class="messageComposer">
-                  <label class="composerIcon" title="Share a file">＋<input id="chatFileInput" type="file" hidden></label>
-                  <div class="messageInputWrap"><textarea id="messageInput" rows="1" maxlength="5000" placeholder="Type a message..."></textarea><span id="recordingTime" class="recordingTime hidden">● 0:00</span></div>
-                  <button id="recordVoiceBtn" class="composerIcon micBtn" type="button" title="Record voice note">●</button>
-                  <button id="sendMessageBtn" class="sendBtn" type="submit" title="Send">➤</button>
+                  <button id="emojiBtn" class="emojiTriggerBtn" type="button" title="Insert emoji" aria-label="Insert emoji">😊</button>
+                  <div class="messageInputWrap">
+                    <textarea id="messageInput" rows="1" maxlength="5000" placeholder="Your message..."></textarea>
+                    <span id="recordingTime" class="recordingTime hidden">● 0:00</span>
+                  </div>
+                  <button id="recordVoiceBtn" class="composerIcon micBtn" type="button" title="Record voice message" aria-label="Record voice message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                  </button>
+                  <label class="composerIcon" title="Attach file" aria-label="Attach file">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    <input id="chatFileInput" type="file" hidden>
+                  </label>
+                  <button id="sendMessageBtn" class="sendBtn" type="submit" title="Send message" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 2.2a1 1 0 0 0-1.05-.22l-18 7a1 1 0 0 0 .06 1.88l7.56 2.52 2.52 7.56a1 1 0 0 0 .95.68h.03a1 1 0 0 0 .93-.64l7-18a1 1 0 0 0-.22-1.05l.22.27Z"/></svg>
+                  </button>
                 </form>
               </div>
             </section>
+
+            <!-- Right: Contact / Circle Details & Attachments Panel -->
+            <aside id="chatInfoPanel" class="chatInfoPanel hidden" aria-label="Conversation details">
+              <button id="closeInfoPanelBtn" class="infoCloseBtn" title="Close details" aria-label="Close details" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+
+              <div class="infoScrollBody">
+                <div class="infoHero">
+                  <button id="infoPanelAvatar" class="infoHeroAvatar" title="Open profile" type="button"></button>
+                  <h4 id="infoPanelName">Friend</h4>
+                  <small id="infoPanelSub">@username</small>
+                </div>
+
+                <!-- Members / Friends in Circle -->
+                <div class="infoSection">
+                  <button id="infoMembersToggle" class="infoSectionHead" type="button" aria-expanded="true">
+                    <span>MEMBERS <b id="infoMembersCount">0</b></span>
+                    <svg class="chevronIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div id="infoMembersBody" class="infoSectionBody">
+                    <div id="infoMembersList" class="infoMembersList"></div>
+                    <button id="infoAddMemberBtn" class="whitePillBtn infoAddBtn" type="button">
+                      <span>＋</span> Add member
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Shared Attachments -->
+                <div class="infoSection">
+                  <button id="infoAttachToggle" class="infoSectionHead" type="button" aria-expanded="true">
+                    <span>ATTACHMENTS <b id="infoAttachCount">0</b></span>
+                    <svg class="chevronIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                  </button>
+                  <div id="infoAttachBody" class="infoSectionBody">
+                    <div id="infoAttachSummary" class="infoAttachList"></div>
+                    <div id="infoAttachFiles" class="infoAttachFiles hidden"></div>
+                  </div>
+                </div>
+              </div>
+
+              <footer class="infoFooter">
+                <span>Notifications</span>
+                <label class="switch">
+                  <input id="chatNotifySwitch" type="checkbox" checked>
+                  <i></i>
+                </label>
+              </footer>
+            </aside>
           </div>
         </section>
 
         <!-- Requests and discovery -->
         <section id="requestsView" class="appView">
           <div class="wideColumn requestPage">
-            <div class="pageHero requestHero"><div><span class="sectionKicker">GROW YOUR CIRCLE</span><h2>Friends & requests</h2><p>Find people by username and choose who can message you.</p></div><span class="heroIcon">♧</span></div>
-            <label class="searchBox discoverSearch"><span>⌕</span><input id="peopleSearch" placeholder="Search an exact username or name..."></label>
+            <div class="pageHero requestHero">
+              <div>
+                <span class="sectionKicker">GROW YOUR CIRCLE</span>
+                <h2>Friends & requests</h2>
+                <p>Find people by username and choose who can message you.</p>
+              </div>
+              <span class="heroIcon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              </span>
+            </div>
+            <label class="searchBox discoverSearch">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7.5"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="peopleSearch" placeholder="Search an exact username or name...">
+            </label>
             <div id="discoverResults" class="peopleGrid"></div>
-            <div class="tabBar"><button class="active" data-request-tab="received">Received <b id="receivedCount">0</b></button><button data-request-tab="sent">Sent <b id="sentCount">0</b></button></div>
+            <div class="tabBar">
+              <button class="active" data-request-tab="received" type="button">Received <b id="receivedCount">0</b></button>
+              <button data-request-tab="sent" type="button">Sent <b id="sentCount">0</b></button>
+            </div>
             <div id="requestList" class="requestList"></div>
           </div>
         </section>
@@ -171,83 +485,242 @@
         <!-- AI -->
         <section id="aiView" class="appView aiView">
           <div class="aiShell">
-            <header class="aiHeader"><span class="novaOrb big">✦</span><div><span class="sectionKicker">PERSONAL ASSISTANT</span><h3>Nova AI</h3><small>Online • Powered through your configured AI provider</small></div><span class="proPill">AI</span></header>
+            <header class="aiHeader">
+              <span class="novaOrb big">✦</span>
+              <div>
+                <span class="sectionKicker">PERSONAL ASSISTANT</span>
+                <h3>Nova AI</h3>
+                <small>Online • Powered through your configured AI provider</small>
+              </div>
+              <span class="proPill">AI</span>
+            </header>
             <div id="aiMessages" class="aiMessages">
-              <div class="aiWelcome"><span class="novaOrb huge">✦</span><h2>How can I help?</h2><p>Ask me anything in English, Hindi, or Hinglish.</p><div class="suggestionGrid"><button data-ai-prompt="Help me write a professional message">✎ Write a message</button><button data-ai-prompt="Give me three creative post ideas">✦ Post ideas</button><button data-ai-prompt="Explain something difficult in simple words">◎ Explain simply</button></div></div>
+              <div class="aiWelcome">
+                <span class="novaOrb huge">✦</span>
+                <h2>How can I help?</h2>
+                <p>Ask me anything in English, Hindi, or Hinglish.</p>
+                <div class="suggestionGrid">
+                  <button data-ai-prompt="Help me write a professional message" type="button">✎ Write a message</button>
+                  <button data-ai-prompt="Give me three creative post ideas" type="button">✦ Post ideas</button>
+                  <button data-ai-prompt="Explain something difficult in simple words" type="button">◎ Explain simply</button>
+                </div>
+              </div>
             </div>
-            <form id="aiComposer" class="aiComposer"><textarea id="aiInput" rows="1" maxlength="8000" placeholder="Ask Nova anything..."></textarea><button class="sendBtn" type="submit">➤</button></form>
+            <form id="aiComposer" class="aiComposer">
+              <textarea id="aiInput" rows="1" maxlength="8000" placeholder="Ask Nova anything..."></textarea>
+              <button class="sendBtn" type="submit" aria-label="Send">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 2.2a1 1 0 0 0-1.05-.22l-18 7a1 1 0 0 0 .06 1.88l7.56 2.52 2.52 7.56a1 1 0 0 0 .95.68h.03a1 1 0 0 0 .93-.64l7-18a1 1 0 0 0-.22-1.05l.22.27Z"/></svg>
+              </button>
+            </form>
           </div>
         </section>
 
         <!-- Profile -->
         <section id="profileView" class="appView">
           <div id="profileColumn" class="profileColumn">
-            <div id="profileCover" class="profileCover"><div class="coverGlow"></div><div class="ownerCoverMark" aria-hidden="true">♛</div></div>
+            <div id="profileCover" class="profileCover">
+              <div class="coverGlow"></div>
+              <div class="ownerCoverMark" aria-hidden="true">♛</div>
+            </div>
             <div id="profileCard" class="profileCard">
               <div id="profileAvatar" class="profileAvatar"></div>
-              <div class="profileActions"><button id="editProfileBtn" class="outlineBtn compactBtn" type="button">Edit profile</button><button id="removeFriendProfileBtn" class="outlineBtn compactBtn dangerOutline hidden" type="button">Remove friend</button><button id="profileMenuBtn" class="iconBtn" type="button">⋮</button></div>
-              <div class="profileIdentity"><div class="profileNameLine"><h2 id="profileName">Your name</h2><span id="profileRoleBadge" class="profileRoleBadge hidden"></span></div><p id="profileHandle">@username</p><div id="profileRoleStatement" class="profileRoleStatement hidden"></div><span id="profilePresence" class="onlineText">● Online</span><p id="profileBio" class="profileBio">Welcome to my Funchat profile.</p></div>
-              <div class="profileStats"><div><b id="profilePostCount">0</b><span>Posts</span></div><div><b id="profileFriendCount">0</b><span>Friends</span></div><div><b id="profileStoryCount">0</b><span>Stories</span></div></div>
+              <div class="profileActions">
+                <button id="editProfileBtn" class="whitePillBtn compactPill" type="button">Edit profile</button>
+                <button id="removeFriendProfileBtn" class="outlineBtn compactBtn dangerOutline hidden" type="button">Remove friend</button>
+                <button id="profileMenuBtn" class="iconBtn" aria-label="Profile options" type="button">⋮</button>
+              </div>
+              <div class="profileIdentity">
+                <div class="profileNameLine">
+                  <h2 id="profileName">Your name</h2>
+                  <span id="profileRoleBadge" class="profileRoleBadge hidden"></span>
+                </div>
+                <p id="profileHandle">@username</p>
+                <div id="profileRoleStatement" class="profileRoleStatement hidden"></div>
+                <span id="profilePresence" class="onlineText">● Online</span>
+                <p id="profileBio" class="profileBio">Welcome to my Funchat profile.</p>
+              </div>
+              <div class="profileStats">
+                <div><b id="profilePostCount">0</b><span>Posts</span></div>
+                <div><b id="profileFriendCount">0</b><span>Friends</span></div>
+                <div><b id="profileStoryCount">0</b><span>Stories</span></div>
+              </div>
             </div>
-            <div class="profileTabs"><button class="active">▦ Posts</button><button>◉ Stories</button><button id="openSettingsBtn">⚙ Settings</button></div>
+            <div class="profileTabs">
+              <button class="active" type="button">▦ Posts</button>
+              <button data-view="stories" type="button">◉ Stories</button>
+              <button id="openSettingsBtn" type="button">⚙ Settings</button>
+            </div>
             <div id="profilePostGrid" class="profilePostGrid"></div>
           </div>
         </section>
       </div>
 
+      <!-- Mobile Bottom Navigation -->
       <nav class="mobileNav" aria-label="Mobile navigation">
-        <button class="active" data-view="home"><span>⌂</span><small>Home</small></button>
-        <button data-view="chats"><span>◌</span><small>Chats</small><b id="mobileChatBadge" class="tinyBadge hidden">0</b></button>
-        <button id="mobileCreateBtn" class="createNavBtn" type="button"><span>＋</span><small>Create</small></button>
-        <button data-view="requests"><span>♧</span><small>Requests</small><b id="mobileRequestBadge" class="tinyBadge hidden">0</b></button>
-        <button data-view="profile"><span>♙</span><small>Profile</small></button>
+        <button class="active" data-view="home" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/></svg>
+          <small>Home</small>
+        </button>
+        <button data-view="chats" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+          <small>Messages</small>
+          <b id="mobileChatBadge" class="tinyBadge hidden">0</b>
+        </button>
+        <button id="mobileCreateBtn" class="createNavBtn" type="button">
+          <span class="createPill">＋</span>
+          <small>Create</small>
+        </button>
+        <button data-view="requests" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <small>Friends</small>
+          <b id="mobileRequestBadge" class="tinyBadge hidden">0</b>
+        </button>
+        <button data-view="profile" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M7 18.5c1.2-2 3-3 5-3s3.8 1 5 3"/></svg>
+          <small>Profile</small>
+        </button>
       </nav>
     </main>
   </div>
 
   <!-- Modals -->
   <div id="postModal" class="modal hidden" role="dialog" aria-modal="true">
-    <div class="modalCard"><header><div><span class="sectionKicker">NEW POST</span><h3>Create a post</h3></div><button class="modalClose iconBtn" data-close="postModal" type="button">×</button></header>
-      <div class="composerAuthor"><span class="currentAvatar"></span><div><b class="currentName">You</b><small>Friends can see this</small></div></div>
+    <div class="modalCard">
+      <header>
+        <div><span class="sectionKicker">NEW POST</span><h3>Create a post</h3></div>
+        <button class="modalClose iconBtn" data-close="postModal" type="button">×</button>
+      </header>
+      <div class="composerAuthor">
+        <span class="currentAvatar"></span>
+        <div><b class="currentName">You</b><small>Friends can see this</small></div>
+      </div>
       <textarea id="postText" maxlength="2000" placeholder="What's on your mind?"></textarea>
       <div id="postMediaPreview" class="mediaPreview hidden"></div>
-      <label class="uploadDrop"><span>▣</span><div><b>Add photo or video</b><small>JPG, PNG, WebP or MP4 • max 25 MB</small></div><input id="postMediaInput" type="file" accept="image/*,video/*" hidden></label>
+      <label class="uploadDrop">
+        <span>▣</span>
+        <div><b>Add photo or video</b><small>JPG, PNG, WebP or MP4 • max 25 MB</small></div>
+        <input id="postMediaInput" type="file" accept="image/*,video/*" hidden>
+      </label>
       <button id="publishPostBtn" class="primaryBtn" type="button">Share post</button>
     </div>
   </div>
 
   <div id="storyModal" class="modal hidden" role="dialog" aria-modal="true">
-    <div class="modalCard storyComposerCard"><header><div><span class="sectionKicker">YOUR MOMENT</span><h3>Create story</h3></div><button class="modalClose iconBtn" data-close="storyModal" type="button">×</button></header>
-      <div id="storyDraft" class="storyDraft bg-aurora"><div id="storyMediaPreview"></div><textarea id="storyCaption" maxlength="500" placeholder="Type something..."></textarea></div>
-      <div class="storyTools"><span>Background</span><button class="colorDot aurora active" data-background="aurora" type="button"></button><button class="colorDot sunset" data-background="sunset" type="button"></button><button class="colorDot ocean" data-background="ocean" type="button"></button><button class="colorDot berry" data-background="berry" type="button"></button><button class="colorDot midnight" data-background="midnight" type="button"></button></div>
-      <label class="uploadDrop compactUpload"><span>▣</span><div><b>Add photo/video</b><small>Optional • max 25 MB</small></div><input id="storyMediaInput" type="file" accept="image/*,video/*" hidden></label>
+    <div class="modalCard storyComposerCard">
+      <header>
+        <div><span class="sectionKicker">YOUR MOMENT</span><h3>Create story</h3></div>
+        <button class="modalClose iconBtn" data-close="storyModal" type="button">×</button>
+      </header>
+      <div id="storyDraft" class="storyDraft bg-aurora">
+        <div id="storyMediaPreview"></div>
+        <textarea id="storyCaption" maxlength="500" placeholder="Type something..."></textarea>
+      </div>
+      <div class="storyTools">
+        <span>Background</span>
+        <button class="colorDot aurora active" data-background="aurora" type="button"></button>
+        <button class="colorDot sunset" data-background="sunset" type="button"></button>
+        <button class="colorDot ocean" data-background="ocean" type="button"></button>
+        <button class="colorDot berry" data-background="berry" type="button"></button>
+        <button class="colorDot midnight" data-background="midnight" type="button"></button>
+      </div>
+      <label class="uploadDrop compactUpload">
+        <span>▣</span>
+        <div><b>Add photo/video</b><small>Optional • max 25 MB</small></div>
+        <input id="storyMediaInput" type="file" accept="image/*,video/*" hidden>
+      </label>
       <button id="publishStoryBtn" class="primaryBtn" type="button">Share for 24 hours</button>
     </div>
   </div>
 
   <div id="storyViewer" class="storyViewer hidden" role="dialog" aria-modal="true">
     <button id="closeStoryViewer" class="storyClose" type="button">×</button>
-    <div class="storyStage"><div class="storyProgress"><i id="storyProgressBar"></i></div><header><span id="storyViewerAvatar"></span><div><b id="storyViewerName"></b><small id="storyViewerTime"></small></div><button id="deleteStoryBtn" class="storyDeleteBtn hidden" title="Delete this story" aria-label="Delete this story" type="button">🗑 Delete</button></header><div id="storyViewerContent" class="storyViewerContent"></div><button id="prevStory" class="storyArrow prev" type="button">‹</button><button id="nextStory" class="storyArrow next" type="button">›</button></div>
+    <div class="storyStage">
+      <div class="storyProgress"><i id="storyProgressBar"></i></div>
+      <header>
+        <span id="storyViewerAvatar"></span>
+        <div><b id="storyViewerName"></b><small id="storyViewerTime"></small></div>
+        <button id="deleteStoryBtn" class="storyDeleteBtn hidden" title="Delete this story" aria-label="Delete this story" type="button">🗑 Delete</button>
+      </header>
+      <div id="storyViewerContent" class="storyViewerContent"></div>
+      <button id="prevStory" class="storyArrow prev" type="button">‹</button>
+      <button id="nextStory" class="storyArrow next" type="button">›</button>
+    </div>
   </div>
 
   <div id="commentsModal" class="modal hidden" role="dialog" aria-modal="true">
-    <div class="modalCard commentsCard"><header><div><span class="sectionKicker">CONVERSATION</span><h3>Comments</h3></div><button class="modalClose iconBtn" data-close="commentsModal" type="button">×</button></header><div id="commentsList" class="commentsList"></div><form id="commentForm" class="commentForm"><input id="commentInput" maxlength="500" placeholder="Write a comment..."><button class="sendBtn" type="submit">➤</button></form></div>
+    <div class="modalCard commentsCard">
+      <header>
+        <div><span class="sectionKicker">CONVERSATION</span><h3>Comments</h3></div>
+        <button class="modalClose iconBtn" data-close="commentsModal" type="button">×</button>
+      </header>
+      <div id="commentsList" class="commentsList"></div>
+      <form id="commentForm" class="commentForm">
+        <input id="commentInput" maxlength="500" placeholder="Write a comment...">
+        <button class="sendBtn" type="submit" aria-label="Post comment">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 2.2a1 1 0 0 0-1.05-.22l-18 7a1 1 0 0 0 .06 1.88l7.56 2.52 2.52 7.56a1 1 0 0 0 .95.68h.03a1 1 0 0 0 .93-.64l7-18a1 1 0 0 0-.22-1.05l.22.27Z"/></svg>
+        </button>
+      </form>
+    </div>
   </div>
 
   <div id="profileEditModal" class="modal hidden" role="dialog" aria-modal="true">
-    <div class="modalCard"><header><div><span class="sectionKicker">ACCOUNT</span><h3>Edit profile</h3></div><button class="modalClose iconBtn" data-close="profileEditModal" type="button">×</button></header>
-      <div class="editAvatarRow"><label id="editAvatarPreview" class="profileAvatar smallProfileAvatar"><input id="avatarInput" type="file" accept="image/*" hidden><span class="cameraBadge">▣</span></label><div><b>Profile photo</b><small>Tap the photo to upload a new one.</small></div></div>
+    <div class="modalCard">
+      <header>
+        <div><span class="sectionKicker">ACCOUNT</span><h3>Edit profile</h3></div>
+        <button class="modalClose iconBtn" data-close="profileEditModal" type="button">×</button>
+      </header>
+      <div class="editAvatarRow">
+        <label id="editAvatarPreview" class="profileAvatar smallProfileAvatar">
+          <input id="avatarInput" type="file" accept="image/*" hidden>
+          <span class="cameraBadge">▣</span>
+        </label>
+        <div><b>Profile photo</b><small>Tap the photo to upload a new one.</small></div>
+      </div>
       <label class="fieldLabel">Display name<input id="editDisplayName" maxlength="40"></label>
       <label class="fieldLabel">Bio<textarea id="editBio" maxlength="160" rows="3"></textarea><small><span id="bioCount">0</span>/160</small></label>
       <button id="saveProfileBtn" class="primaryBtn" type="button">Save changes</button>
     </div>
   </div>
 
-  <div id="settingsDrawer" class="drawer hidden"><button class="drawerBackdrop" data-close="settingsDrawer" type="button"></button><aside class="drawerPanel"><header><div class="brand"><span class="logoMark"><span>♛</span></span><span>Funchat</span></div><button class="iconBtn" data-close="settingsDrawer" type="button">×</button></header><div class="drawerProfile"><span id="drawerAvatar"></span><div><b id="drawerName"></b><small id="drawerHandle"></small></div></div><button data-view="profile" class="drawerItem">♙ <span>My profile</span><b>›</b></button><button data-view="requests" class="drawerItem">♧ <span>Friend requests</span><b id="drawerRequestCount">0</b></button><button data-view="ai" class="drawerItem">✦ <span>Nova AI</span><b>›</b></button><div class="drawerItem static">☾ <span>Light theme</span><label class="switch"><input id="themeSwitch" type="checkbox"><i></i></label></div><a id="drawerAdminLink" href="/admin" class="drawerItem hidden">🛡 <span>Admin panel</span><b>›</b></a><button id="logoutBtn" class="drawerItem logoutItem">↪ <span>Log out</span></button><p class="drawerFooter">Stay connected. Stay kind. ♥</p></aside></div>
+  <div id="settingsDrawer" class="drawer hidden">
+    <button class="drawerBackdrop" data-close="settingsDrawer" type="button"></button>
+    <aside class="drawerPanel">
+      <header>
+        <div class="brand">
+          <span class="logoMark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.918 2 11.75c0 2.146.887 4.112 2.36 5.635-.153 1.24-.635 2.41-1.268 3.24a.5.5 0 0 0 .514.79c2.012-.39 3.748-1.078 4.803-1.622A11.3 11.3 0 0 0 12 20.5c5.523 0 10-3.918 10-8.75S17.523 3 12 3Z"/></svg>
+          </span>
+          <span>Funchat</span>
+        </div>
+        <button class="iconBtn" data-close="settingsDrawer" type="button">×</button>
+      </header>
+      <div class="drawerProfile">
+        <span id="drawerAvatar"></span>
+        <div><b id="drawerName"></b><small id="drawerHandle"></small></div>
+      </div>
+      <button data-view="home" class="drawerItem" type="button">▦ <span>Home feed</span><b>›</b></button>
+      <button data-view="chats" class="drawerItem" type="button">💬 <span>Messages</span><b>›</b></button>
+      <button data-view="stories" class="drawerItem" type="button">◉ <span>Stories</span><b>›</b></button>
+      <button data-view="profile" class="drawerItem" type="button">👤 <span>My profile</span><b>›</b></button>
+      <button data-view="requests" class="drawerItem" type="button">👥 <span>Friend requests</span><b id="drawerRequestCount">0</b></button>
+      <button data-view="ai" class="drawerItem" type="button">✦ <span>Nova AI</span><b>›</b></button>
+      <div class="drawerItem static">
+        ☀ <span>Light theme</span>
+        <label class="switch"><input id="themeSwitch" type="checkbox"><i></i></label>
+      </div>
+      <a id="drawerAdminLink" href="/admin" class="drawerItem hidden">🛡 <span>Admin panel</span><b>›</b></a>
+      <button id="logoutBtn" class="drawerItem logoutItem" type="button">↪ <span>Log out</span></button>
+      <p class="drawerFooter">Funchat • Clean Dark Messenger</p>
+    </aside>
+  </div>
 
-  <div id="createMenu" class="createMenu hidden"><button data-create="post" type="button"><span>▦</span><b>Post</b><small>Share with friends</small></button><button data-create="story" type="button"><span>◉</span><b>Story</b><small>Visible for 24 hours</small></button></div>
+  <div id="createMenu" class="createMenu hidden">
+    <button data-create="post" type="button"><span>▦</span><b>Post</b><small>Share with friends</small></button>
+    <button data-create="story" type="button"><span>◉</span><b>Story</b><small>Visible for 24 hours</small></button>
+  </div>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="app.js?v=1.3.4"></script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3a828d0d86bdc57',t:'MTc4OTMxMzA3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script src="app.js?v=2.0.0"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5c87ea328c34025',t:'MTc5NTAyMDg0MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5c87ea328c34025',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+</body>
 </html>
